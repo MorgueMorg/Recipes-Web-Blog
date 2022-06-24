@@ -43,6 +43,9 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, related_name="post")
     create_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
