@@ -19,3 +19,4 @@ def get_categories():
     category = Category.objects.all()
     # category = get_all_categories()
     return {"list_category": category}
+
