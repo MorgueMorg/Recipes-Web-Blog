@@ -56,6 +56,9 @@ class Post(models.Model):
     def get_recipes(self):
         return self.recipes.all()
 
+    def get_comments(self):
+        return self.comment.all()
+
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
