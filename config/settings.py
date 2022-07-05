@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'blog',
     'contact',
+    'gallery',
 ]
 
 MIDDLEWARE = [
@@ -140,4 +141,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
+# Для дебаг тулбара
 INTERNAL_IPS = '127.0.0.1'
+
+
+# filebased говорит о том, что наше хеширование будет основано на файловой системе
+# location - это директория где будет хранится кэш
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache'),
+    }
+}
